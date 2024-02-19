@@ -9,7 +9,7 @@ var date = DateTime.UtcNow;
 
 var games = new List<string>();
 
-string name = GetName();
+string name = Helpers.GetName();
 
 menu.ShowMenu(name, date);
 

@@ -7,15 +7,17 @@ namespace MyFirstProgram
        internal void ShowMenu(string name, DateTime date)
         {
             Console.WriteLine("---------------------------------------------");
-            Console.WriteLine($"Hello {name.ToUpper()}. It's {date.DayOfWeek}. This is your math's game. That's great that you're working on improving yourself\n");
+            Console.WriteLine($"Hello {name}. It's {date.DayOfWeek}. This is your math's game. That's great that you're working on improving yourself\n");
+            Console.WriteLine("Press any key to show the menu");
+            Console.ReadLine();
+            Console.WriteLine("\n");
 
             var isGameOn = true;
 
             do
             {
                 Console.Clear();
-                Console.WriteLine($@"
-What game would you like to play today? Choose from the options below:
+                Console.WriteLine($@"What game would you like to play today? Choose from the options below:
 V - View Previous Games
 A - Addition
 S - Subtraction
