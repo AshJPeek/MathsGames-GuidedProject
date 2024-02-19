@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyFirstProgram.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace MyFirstProgram
 {
     internal class Helpers
     {
-        static List<string> games = new();
+        internal static List<Game> games = new List<Game>();
         internal static void GetGames()
         {
             Console.Clear();
@@ -16,14 +17,12 @@ namespace MyFirstProgram
             Console.WriteLine("---------------------------------------------");
             foreach (var game in games)
             {
-                Console.WriteLine(game);
+                Console.WriteLine($"{game.Date} - {game.Type}: {game.Score}pts");
             }
             Console.WriteLine("---------------------------------------------\n");
             Console.WriteLine("Press any key to go back to the main menu.");
             Console.ReadLine();
         }
-
-
         internal static int[] GetDivisionNumbers()
         {
             var random = new Random();
@@ -45,7 +44,12 @@ namespace MyFirstProgram
         }
         internal static void AddToHistory(int gameScore, string gameType)
         {
-            games.Add($"{DateTime.Now} - {gameType}: {gameScore}");
+            games.Add(new Game
+            {
+                Date = DateTime.Now,
+                Score = gameScore,
+                Type = gameType
+            });
         }
 
     }
