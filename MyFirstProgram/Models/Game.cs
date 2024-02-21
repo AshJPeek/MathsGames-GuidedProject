@@ -11,8 +11,16 @@ internal class Game
 
 internal enum GameType
 {
-    Addition,
-    Subtraction,
-    Multiplication,
-    Division
+    AdditionEasy,
+    AdditionMedium,
+    AdditionHard,
+    SubtractionEasy,
+    SubtractionMedium,
+    SubtractionHard,
+    MultiplicationEasy,
+    MultiplicationMedium,
+    MultiplicationHard,
+    DivisionEasy,
+    DivisionMedium,
+    DivisionHard
 }

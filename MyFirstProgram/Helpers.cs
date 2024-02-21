@@ -34,17 +34,55 @@ namespace MyFirstProgram
             Console.WriteLine("Press any key to go back to the main menu.");
             Console.ReadLine();
         }
-        internal static int[] GetDivisionNumbers()
+        internal static int[] GetDivisionNumbersEasy()
         {
             var random = new Random();
-            var firstNumber = random.Next(0, 99);
-            var secondNumber = random.Next(0, 99);
+            var firstNumber = random.Next(1, 99);
+            var secondNumber = random.Next(1, 99);
 
             var result = new int[2];
 
             while (firstNumber % secondNumber != 0)
             {
                 firstNumber = random.Next(1, 99);
+                secondNumber = random.Next(1, 99);
+            }
+
+            result[0] = firstNumber;
+            result[1] = secondNumber;
+
+            return result;
+        }
+        internal static int[] GetDivisionNumbersMedium()
+        {
+            var random = new Random();
+            var firstNumber = random.Next(100, 500);
+            var secondNumber = random.Next(1, 99);
+
+            var result = new int[2];
+
+            while (firstNumber % secondNumber != 0)
+            {
+                firstNumber = random.Next(100, 500);
+                secondNumber = random.Next(1, 99);
+            }
+
+            result[0] = firstNumber;
+            result[1] = secondNumber;
+
+            return result;
+        }
+        internal static int[] GetDivisionNumbersHard()
+        {
+            var random = new Random();
+            var firstNumber = random.Next(500, 1000);
+            var secondNumber = random.Next(1, 99);
+
+            var result = new int[2];
+
+            while (firstNumber % secondNumber != 0)
+            {
+                firstNumber = random.Next(500, 1000);
                 secondNumber = random.Next(1, 99);
             }
 
@@ -83,6 +121,17 @@ namespace MyFirstProgram
             }
 
             return name;
+        }
+
+        internal static string DifficultySelection()
+        {
+            Console.WriteLine(
+            @"Please select a difficulty mode
+E - Easy
+M - Medium
+H - Hard");
+            var difficultyChoice = Console.ReadLine();
+            return difficultyChoice;
         }
     }
 }

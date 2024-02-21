@@ -34,16 +34,68 @@ Q - Quit the program");
                         Helpers.GetGames();
                         break;
                     case "a":
-                       engine.AdditionGame("Addition game");
-                        break;
+                        Console.Clear();
+                        var difficultyChoiceAddition = Helpers.DifficultySelection();                      
+                        switch (difficultyChoiceAddition)
+                        {
+                            case "e":
+                                engine.AdditionGameEasy("Addition game - Easy");
+                                break;
+                            case "m":
+                                engine.AdditionGameMedium("Addition game - Medium");
+                                break;
+                            case "h":
+                                engine.AdditionGameHard("Addition game - Hard");
+                                break;
+                        }
+                        break;                      
                     case "s":
-                        engine.SubtractionGame("Subtraction game");
+                        Console.Clear();
+                        var difficultyChoiceSubtraction = Helpers.DifficultySelection();
+                        switch (difficultyChoiceSubtraction)
+                        {
+                            case "e":
+                                engine.SubtractionGameEasy("Subtraction game - Easy");
+                                break;
+                            case "m":
+                                engine.SubtractionGameMedium("Subtraction game - Medium");
+                                break;
+                            case "h":
+                                engine.SubtractionGameHard("Subtraction game - Hard");
+                                break;
+                        }
                         break;
                     case "m":
-                        engine.MultiplicationGame("Multiplication game");
-                        break;
+                        Console.Clear();
+                        var difficultyChoiceMultiplication = Helpers.DifficultySelection();
+                        switch (difficultyChoiceMultiplication)
+                        {
+                            case "e":
+                                engine.MultiplicationGameEasy("Multiplication game - Easy");
+                                break;
+                            case "m":
+                                engine.MultiplicationGameMedium("Multiplication game - Medium");
+                                break;
+                            case "h":
+                                engine.MultiplicationGameHard("Multiplication game - Hard");
+                                break;
+                        }
+                    break;
                     case "d":
-                        engine.DivisionGame("Division game");
+                        Console.Clear();
+                        var difficultyChoiceDivision = Helpers.DifficultySelection();
+                        switch (difficultyChoiceDivision)
+                        {
+                            case "e":
+                                engine.DivisionGameEasy("Division game - Easy");
+                                break;
+                            case "m":
+                                engine.DivisionGameMedium("Division game - Medium");
+                                break;
+                            case "h":
+                                engine.DivisionGameHard("Division game - Hard");
+                                break;
+                        }
                         break;
                     case "q":
                         Console.WriteLine("Goodbye");
